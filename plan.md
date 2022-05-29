@@ -43,23 +43,25 @@ warp deploy_account doquan
 Transpile ERC20
 
 ```
-warp transpile openzeppelin-contracts/contracts/token/ERC20/ERC20.sol
+warp transpile ERC20/ERC20.sol
 ```
 
 Deploy the ERC20
 
 ```
-warp deploy warp_output/openzeppelin___contracts/contracts/token/ERC20/ERC20__WARP_CONTRACT__ERC20.cairo --inputs 5 0x53 0x54 0x41 0x52 0x4B 5 0x53 0x54 0x41 0x52 0x4B 
+warp deploy warp_output/ERC20/ERC20_ERC20.cairo --inputs 5 0x53 0x54 0x41 0x52 0x4B 5 0x53 0x54 0x41 0x52 0x4B 
+warp status <tx-hash>
 ```
 
 ## Invoke
 
 ```
-warp invoke --function mint to account
+warp invoke warp_output/ERC20/ERC20_ERC20.cairo --address <contract_address> --function mint_40c10f19 --inputs <__default__> 0 1000
+
 ```
 
 ```
-warp invoke transfer
+warp invoke warp_output/ERC20/ERC20_ERC20.cairo --address <contract_address> --function transfer_a9059cbb --inputs <doquan> 0 10
 ```
 
 ## Inspection
@@ -97,7 +99,4 @@ warp transpile semantic/storage.sol
 ```
 warp transpile semantic/copy_semantics.sol
 ```
-
-# Contrived extend ERC20 with an array
-
 
