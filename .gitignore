@@ -1,1 +1,5 @@
 warp_output
+node_modules
+
+yarn.lock
+package.json
