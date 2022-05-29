@@ -2,9 +2,9 @@ pragma solidity ^0.8.10;
 
 //SPDX-License-Identifier: MIT
 
-contract Derived is Mid {
-  function compute(uint8 x) pure public returns (uint8) {
-    return super.func(x) + Base.func(x);
+contract Base {
+  function func(uint8 x) virtual pure public returns (uint8) {
+    return x;
   }
 }
 
@@ -14,8 +14,8 @@ contract Mid is Base {
   }
 }
 
-contract Base {
-  function func(uint8 x) virtual pure public returns (uint8) {
-    return x;
+contract Derived is Mid {
+  function compute(uint8 x) pure public returns (uint8) {
+    return super.func(x) + Base.func(x);
   }
 }
