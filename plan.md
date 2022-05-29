@@ -67,13 +67,37 @@ warp invoke transfer
 # Syntax
 
 ## Modifiers
+
+```
+warp transpile syntax/modifiers.sol
+```
+
 ## Inheritance
+
+```
+warp transpile syntax/inheritance.sol
+```
 
 # Semantic
 
 ## Memory
+
+```
+warp transpile semantic/memory.sol
+```
+
 ## Storage Semantics
+
+```
+warp transpile semantic/storage.sol
+```
+
 ## Copy semantics
 
+```
+warp transpile semantic/copy_semantics.sol
+```
+
 # Contrived extend ERC20 with an array
+
 
