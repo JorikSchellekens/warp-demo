@@ -30,8 +30,8 @@ changes to the Solidity source is necessary.
 ## Write **once** memory
 
 ```python
-[ap] = 100; ap++
-[ap - 1] = 0; ap++ # error
+[ap] = 100
+[ap] = 0 # error
 ```
 
 ---
@@ -214,7 +214,7 @@ Address size changes to 251 bits
 Check the unsuported features list:
 
   - abi.encode / abi.decode    # on the roadmap
-  - terenary operators         # on the roadmap
+  - ternary operators         # on the roadmap
   - indexed events             # on the roadmap
   - gas
 
