@@ -1,9 +1,15 @@
 # Install
 
+If you're on m1 mac you'll need to export some environment variables
 
 ```
-yarn global add @swp0x0/warp
-warp install
+brew install gmp
+export CFLAGS=-I`brew --prefix gmp`/include LDFLAGS=-L`brew --prefix gmp`/lib
+```
+
+```
+yarn global add warp
+warp install --verbose
 ```
 
 If you're on mac you'll need to
