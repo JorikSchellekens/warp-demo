@@ -25,19 +25,13 @@ export STARKNET_NETWORK=alpha-goerli
 export STARKNET_WALLET=starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount
 ```
 
-Go to the examples
-
-```
-cd ..
-```
-
 # ERC20 example
 
 Deploy accounts
 
 ```
 warp deploy_account
-warp deploy_account doquan
+warp deploy_account --account doquan
 ```
 
 Transpile ERC20
