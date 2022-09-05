@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-contract WARP {
+contract ERC20 {
   mapping(address => uint256) public _balances;
 
   uint256 public _totalSupply = 100000000000000;

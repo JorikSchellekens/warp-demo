@@ -2,9 +2,6 @@
 
 An intro to warp
 
-```bash
-imgcat ./slides/cairo.png
-```
 ---
 
 # Why warp
@@ -141,8 +138,6 @@ assembly {
     r := shr(f, r)
 }
 ```
-Becomes
-
 ```solidity
 f = 0;
 if (r > 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)
@@ -160,8 +155,6 @@ r = r >> f;
 Replace assembly with Inline Cairo -- fallbacks
 
 ```solidity
-pragma solidity ^0.8.10;
-
 contract WARP {
   /// warp-cairo
   /// func INTERNALFUNC(stub)() -> (a: felt):
@@ -170,32 +163,6 @@ contract WARP {
   function stub() internal returns (uint8) {
     return 0;
   }
-
-  function useStub() public returns (uint8) {
-    return stub();
-  }
-}
-```
----
-
-# Transpiling a large project
-
-## Changes required
-
-Replace assembly with Inline Cairo -- fallbacks
-
-```solidity
-pragma solidity ^0.8.10;
-
-contract WARP {
-  /// warp-cairo
-  /// func INTERNALFUNC(stub)() -> (a: felt):
-  ///     return (5)
-  /// end
-  function stub() internal returns (uint8) {
-    return 0;
-  }
-
   function useStub() public returns (uint8) {
     return stub();
   }
@@ -206,7 +173,9 @@ contract WARP {
 
 # Transpiling a large project
 
-Address size changes to 251 bits
+Address size changes from 160 to 251 bits (typed as uint256)
+
+Update type casts accordingly
 
 ---
 
@@ -233,6 +202,7 @@ Replace these where possible
  - Function pointers
  - Abi encode and abi decode
  - Ternary expressions
+ - Support arithmetic subset of Yul assembly
 
 ## Maintenance
 
@@ -242,5 +212,13 @@ Replace these where possible
 
 # Shameless Nethermind plug
 
+- Protocol Design
+- Auditing
+- Ethereum client
+- Starknet client
+- Compilers
+- Cryptography Research
+- Governance
+- Technical due diligence
 
-
+Hiring!
